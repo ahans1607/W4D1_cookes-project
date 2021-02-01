@@ -15,13 +15,27 @@
 // console.log("it worked")
 
 // document.cookie = "monster_name=cookie";
-document.cookie = "favorite_cookie=snickerdoodle";
+// document.cookie = "favorite_cookie=snickerdoodle";
 
 // // window.alert(document.cookie);
 // // alert("COOOKIEEEE");
 
-// let setCookie = (name, value) => {
-// document.cookie = `${name} = ${value}`
-// };
+let setCookie = (name, value) => {
+  document.cookie = `${name} = ${value}`;
+};
 
-// setCookie(100 , "choclate")
+let getCookie = () => {
+  //Set up an array
+  let array = [];
+  //Pull all of our cookies
+  //push those values into the array
+  //return array
+  array.push(document.cookie)
+  return array;
+  
+}
+
+setCookie("Hans" , "choclate");
+setCookie("Zane", "ginger molasses");
+
+console.log(getCookie());
