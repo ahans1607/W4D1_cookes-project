@@ -49,7 +49,19 @@ let getCookieValue = (arg1) => {
 }
 
 let deleteCookie = (name) => {
-  
+  let array = getCookie();
+  let index;
+  for (let i = 0; i < array.length; i++){
+    let current = array[i];
+    if (!current.includes(name)){
+      console.log("cookie not found");
+    }
+    else{
+      index = i;
+    }
+  }
+  array.splice(index, 1);
+  return array;
 }
 
 
@@ -57,5 +69,7 @@ let deleteCookie = (name) => {
 setCookie("Zane", "ginger molasses");
 setCookie("Hans" , "choclate");
 
-console.log(getCookie())
-console.log(getCookieValue("Zane"));
+// console.log(getCookie())
+// console.log(getCookieValue("Zane"));
+(deleteCookie("Hans"))
+console.log(getCookie());
